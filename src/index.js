@@ -1,3 +1,5 @@
+import emojipedia from "./emojipedia";
+
 var numbers = [3, 56, 2, 48, 5];
 
 //Map -Create a new array by doing something with each item in an array.
@@ -21,14 +23,20 @@ const numberGreaterThan10 = numbers.find(function (num) {
   return num > 10;
 });
 //FindIndex - find the index of the first item that matches.
-const indexGGreaterThan10 = numbers.findIndex(function (num) {
+const indexGreaterThan10 = numbers.findIndex(function (num) {
   return num > 10;
 });
 
 console.log(
-  doubledNumbers,
-  numbersGreater,
-  sumAccumulator,
-  numberGreaterThan10,
-  indexGGreaterThan10
+  { doubledNumbers },
+  { numbersGreater },
+  { sumAccumulator },
+  { numberGreaterThan10 },
+  { indexGreaterThan10 }
 );
+
+const newEmojiPedia = emojipedia.map(function (emojiEntry) {
+  return emojiEntry.meaning.substring(0, 100);
+});
+
+console.log(newEmojiPedia);
